@@ -7,3 +7,5 @@ console.log(novoUser.exibirInfos());
 
 const novoAdmin = new Admin('Sergio', 'a@b.com', '2021-02-04')
 console.log(novoAdmin.nome);
+novoAdmin.nome = 'Viumar'
+console.log(novoAdmin.nome)

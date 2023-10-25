@@ -4,6 +4,7 @@ export default class User {
   #nascimento
   #role
   #ativo
+  
   constructor(nome, email, nascimento, role, ativo = true) {
     this.#nome = nome
     this.#email = email
@@ -32,7 +33,18 @@ export default class User {
     return this.#ativo
   }
 
+  set nome(novoNome) {
+    if (novoNome === ''){
+      throw new Error('formato não válido')
+    }
+    this.#nome = novoNome
+  } 
+
+  set email(novoEmail) {
+    this.#email = novoEmail
+  }
+
   exibirInfos() {
-    return `${nome}, ${email}, ${nascimento}, ${ativo}`
+    return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.ativo}`
   }
 }
